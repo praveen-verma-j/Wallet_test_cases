@@ -1,0 +1,34 @@
+Scenario: Attempt to create new customer (calling method addCustomer), without providing name
+Given : A valid mobile number and a valid amount
+When  : Name provided is null
+Then  : Should throw error "Name provided is null"
+
+
+Scenario: Attempt to create new customer (calling method addCustomer), without providing mobile number
+Given : A valid customer name and a valid amount
+When  : Mobile number provided is null
+Then  : Should throw error "Mobile number provided is null"
+
+
+Scenario: Attempt to create new customer (calling method addCustomer), without providing amount
+Given : A valid customer name and a valid Mobile number
+When  : Amount provided is null
+Then  : Should throw error "Amount provided is null"
+
+
+Scenario: Attempt to create new customer (calling method addCustomer), with negative amount
+Given : A valid customer name and a valid Mobile number
+When  : Amount provided is negative
+Then  : Should throw error "Cannot create account with negative balance"
+
+
+Scenario: Attempt to create new customer and wallet(calling method save)
+Given : A valid customer name ,a valid Mobile number and valid amount
+When  : All values are valid
+Then  : It should return a Customer, which was successfully saved.
+
+
+Scenario: Finding balance of an account with mobile number (calling method showBalance)
+Given : Customer exists with an valid account and balance
+When  : Mobile number provided is invalid
+Then  : Should throw error "Mobile number provided is invalid"
